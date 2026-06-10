@@ -30,4 +30,8 @@ public class CustomerService {
     public List<Customer> getAllCustomers(){
         return customerRepository.getAllCustomers();
     }
+
+    public Customer getCustomerByID(int id){
+        return customerRepository.getCustomerById(id);
+    }
 }
