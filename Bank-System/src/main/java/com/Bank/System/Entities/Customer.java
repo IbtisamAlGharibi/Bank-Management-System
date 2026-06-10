@@ -16,5 +16,6 @@ public class Customer {
     private int balance;
     private String email;
     private int phoneNumber;
+    private boolean isActive;
 
 }
