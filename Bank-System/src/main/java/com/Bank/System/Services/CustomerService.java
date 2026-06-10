@@ -34,4 +34,7 @@ public class CustomerService {
     public Customer getCustomerByID(int id){
         return customerRepository.getCustomerById(id);
     }
+    public Customer getCustomerByName(String name){
+       return customerRepository.getCustomerByName(name);
+    }
 }
