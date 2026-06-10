@@ -33,4 +33,9 @@ public class CustomerController {
     public Customer updateCustomer(@RequestBody Customer customer) throws Exception {
         return customerService.updateCustomer(customer);
     }
+
+    @DeleteMapping("deleteById")
+    public Boolean deleteById(@RequestParam Integer id) {
+        return customerService.deleteById(id);
+    }
 }
