@@ -29,4 +29,8 @@ public class CustomerController {
     public Customer getByName(@RequestParam String name) {
         return customerService.getCustomerByName(name);
     }
+    @PutMapping("update")
+    public Customer updateCustomer(@RequestBody Customer customer) throws Exception {
+        return customerService.updateCustomer(customer);
+    }
 }
