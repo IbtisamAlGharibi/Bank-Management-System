@@ -37,4 +37,17 @@ public class CustomerService {
     public Customer getCustomerByName(String name){
        return customerRepository.getCustomerByName(name);
     }
+
+    public Customer updateCustomer(Customer newCustomer) throws Exception{
+        Customer existingCustomer = customerRepository.getCustomerById(newCustomer.getCustomerId());
+
+        if (existingCustomer == null){
+            throw new Exception("Customer not found");
+        }
+        existingCustomer.setCustomerName(newCustomer.getCustomerName());
+        existingCustomer.setEmail(newCustomer.getEmail());
+        existingCustomer.setBalance(newCustomer.getBalance());
+        existingCustomer.setPhoneNumber(newCustomer.getPhoneNumber());
+        return customerRepository.save(existingCustomer);
+    }
 }
