@@ -5,6 +5,7 @@ import com.Bank.System.Repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -49,5 +50,16 @@ public class CustomerService {
         existingCustomer.setBalance(newCustomer.getBalance());
         existingCustomer.setPhoneNumber(newCustomer.getPhoneNumber());
         return customerRepository.save(existingCustomer);
+    }
+
+    public Boolean deleteById(Integer id) {
+        Customer customer = customerRepository.getCustomerById(id);
+        if (customer != null) {
+            customer.setActive(false);
+           customerRepository.save(customer);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
