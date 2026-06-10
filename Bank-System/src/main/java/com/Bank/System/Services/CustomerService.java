@@ -5,6 +5,8 @@ import com.Bank.System.Repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CustomerService {
 
@@ -23,5 +25,9 @@ public class CustomerService {
         customerToAdd.setActive(newCustomer.isActive());
 
         return customerRepository.save(customerToAdd);
+    }
+
+    public List<Customer> getAllCustomers(){
+        return customerRepository.getAllCustomers();
     }
 }
