@@ -1,14 +1,12 @@
 package com.Bank.System.Entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @Data
 @Getter
 @Setter
+@NoArgsConstructor
 public class Customer {
     private int customerId;
     private String customerName;
